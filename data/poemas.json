@@ -1,0 +1,5 @@
+[
+  { "id": 1, "titulo": "Poema 1", "texto": "Mi mente cada día se encuentra llena de ti.\nEs bonito." },
+  { "id": 2, "titulo": "Poema 2", "texto": "La luna se oculta, tímida y serena..." },
+  { "id": 3, "titulo": "Poema 3", "texto": "Los sueños vuelan con alas de espuma..." }
+]
