@@ -4,7 +4,8 @@ import { obtenerPoemaDelDia } from './poemsManager.js';
 async function init() {
   try {
     // 1️⃣ Cargar poemas y progreso desde Firebase
-    const res = await fetch('data/poemas.json');
+    //const res = await fetch('data/poemas.json');
+    const res = await fetch('https://raw.githubusercontent.com/milo023-jpg/poemsWeb/refs/heads/main/data/poemas.json');
     const poemas = await res.json();
     const progreso = await obtenerProgreso();
 
