@@ -53,19 +53,5 @@
   { "id": 52, "titulo": "Poema 52", "texto": "Vivir, vivir se volvió quedarse en sus ojos." },
   { "id": 53, "titulo": "Poema 53", "texto": "Me gustas con tus dudas, con tus miedos, con todo." },
   { "id": 54, "titulo": "Poema 54", "texto": "Ella, mi día soleado, mi atardecer bonito." },
-  { "id": 55, "titulo": "Poema 55", "texto": "Te pienso más de lo que debería. Y menos de lo que mereces." },
-  { "id": 56, "titulo": "Poema 56", "texto": "" },
-  { "id": 57, "titulo": "Poema 57", "texto": "" },
-  { "id": 58, "titulo": "Poema 58", "texto": "" },
-  { "id": 59, "titulo": "Poema 59", "texto": "" },
-  { "id": 60, "titulo": "Poema 60", "texto": "" },
-  { "id": 61, "titulo": "Poema 61", "texto": "" },
-  { "id": 62, "titulo": "Poema 62", "texto": "" },
-  { "id": 63, "titulo": "Poema 63", "texto": "" },
-  { "id": 64, "titulo": "Poema 64", "texto": "" },
-  { "id": 65, "titulo": "Poema 65", "texto": "" },
-  { "id": 66, "titulo": "Poema 66", "texto": "" },
-  { "id": 67, "titulo": "Poema 67", "texto": "" },
-  { "id": 68, "titulo": "Poema 68", "texto": "" },
-  { "id": 69, "titulo": "Poema 69", "texto": "" }
+  { "id": 55, "titulo": "Poema 55", "texto": "Te pienso más de lo que debería. Y menos de lo que mereces." }
 ]

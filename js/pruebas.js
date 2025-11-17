@@ -45,27 +45,31 @@ function mostrarListaPoemas(poemas, vistos) {
   const contador = document.getElementById('contador-poemas');
   lista.innerHTML = '';
 
-  // Mostrar contador de progreso
-  contador.textContent = `Has visto ${vistos.length} de ${poemas.length} poemas`;
+  // Filtrar solo los poemas vistos
+  const poemasVistos = poemas.filter(poema => vistos.includes(poema.id));
 
-  // Mostrar todos los poemas, marcando los vistos
-  poemas.forEach(poema => {
+  // Mostrar contador de progreso
+  contador.textContent = `Has visto ${poemasVistos.length} de ${poemas.length} poemas`;
+
+  // Si no hay poemas vistos
+  if (poemasVistos.length === 0) {
+    const li = document.createElement('li');
+    li.textContent = 'Aún no has leído ningún poema 💗';
+    li.style.opacity = '0.7';
+    li.style.fontStyle = 'italic';
+    lista.appendChild(li);
+    return;
+  }
+
+  // Mostrar sólo los poemas vistos
+  poemasVistos.forEach(poema => {
     const li = document.createElement('li');
     li.textContent = `${poema.id}. ${poema.texto}`;
-    if (vistos.includes(poema.id)) {
-      li.classList.add('visto');
-      li.text = 'Ya visto 💖';
-    } else {
-      li.classList.add('no-visto');
-      li.text = 'Aún no visto';
-    }
-
-
-    // Al hacer clic en un poema, se muestra su contenido
-    li.addEventListener('click', () => mostrarPoema(poema));
+    li.classList.add('visto');
     lista.appendChild(li);
   });
 }
+
 
 
 init();
