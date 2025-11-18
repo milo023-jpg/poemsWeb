@@ -216,14 +216,19 @@ footer {
   main.contenedor-principal {
     width: 85%;
     height: 100vh;
+    display: flex;
+    justify-content: center;  /* solo centra horizontal */
+    align-items: flex-start;  /* 🔥 se alinea arriba */
+    padding-top: 3vh;         /* espacio suave arriba */
   }
 
   .card {
     width: 90%;
     max-width: 700px;
-    height: 85vh;
+    height: 80vh;
     padding: 2rem 2.5rem;
     border-radius: 2rem;
+    
     /* 📐 Distribución interna */
     display: flex;
     flex-direction: column;
@@ -260,10 +265,12 @@ footer {
   }
 
   #poema-container {
+    max-width: 85%;        /* controla el ancho dentro de la card */
+    margin: 0 auto;        /* centra automáticamente en la card */
+    padding: 30px;         /* espacio interno */
     max-height: 35%;
-    margin: 1vw 18vw;
-    padding: 30px;
   }
+
 
   #lista-poemas {
     max-height: 35%;
