@@ -8,6 +8,20 @@ html, body {
   overscroll-behavior: none;
 }
 
+body {
+  font-family: "Georgia", serif;
+  color: #4a004d;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body::before {
   content: "";
   position: fixed;
