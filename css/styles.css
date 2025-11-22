@@ -6,21 +6,20 @@ html, body {
   padding: 0;
   overflow: hidden;
   overscroll-behavior: none;
-  position: fixed;
 }
 
-body {
-  font-family: "Georgia", serif;
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background-image: url("img/background_poemas_2.png");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  color: #4a004d;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  overflow: hidden;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
 /* ====== CAJA PRINCIPAL ====== */
