@@ -237,7 +237,7 @@ footer {
 
   main.contenedor-principal {
     width: 85%;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     justify-content: center;  /* solo centra horizontal */
     align-items: center;  /* 🔥 se alinea arriba */
