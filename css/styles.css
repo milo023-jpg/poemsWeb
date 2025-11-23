@@ -43,6 +43,7 @@ main.contenedor-principal {
   align-items: center;
   width: 70%;
   height: 100vh;
+  margin: 0 auto;
 }
 
 .card {
@@ -59,6 +60,7 @@ main.contenedor-principal {
   border: 0.25vw solid rgba(255, 180, 240, 0.8);
   animation: fadeIn 1.2s ease;
   transition: all 0.4s ease;
+  margin: 0 auto;
 
   /* 📐 Distribución interna */
   display: flex;
@@ -228,12 +230,18 @@ footer {
 
 /* Tablets medianas (hasta 1024px) */
 @media (max-width: 1024px) {
+
+  body {
+    align-self: flex-start;
+    padding-top: 5vh;
+  }
+
   main.contenedor-principal {
     width: 85%;
     height: 100vh;
     display: flex;
     justify-content: center;  /* solo centra horizontal */
-    align-items: flex-start;  /* 🔥 se alinea arriba */
+    align-items: center;  /* 🔥 se alinea arriba */
     padding-top: 3vh;         /* espacio suave arriba */
   }
 
