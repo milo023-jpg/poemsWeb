@@ -68,7 +68,8 @@ main.contenedor-principal {
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 @keyframes fadeIn {
@@ -301,8 +302,12 @@ footer {
 
   #lista-poemas {
     max-height: 45%;
+    width: 100%;
+    overflow-y: auto;                 /* Permitir desplazamiento solo aquí */
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    padding-right: 1rem;              /* evita que el scroll tape el texto */
   }
-
+  
   footer {
     font-size: 1.5rem;
   }
