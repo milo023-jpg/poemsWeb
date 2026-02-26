@@ -12,18 +12,13 @@
     OneSignalDeferred.push(async function(OneSignal) {
       await OneSignal.init({
         appId: "1ec579bf-552f-4e70-9900-4e6bc28b63a5",
-        promptOptions: {
-          slidedown: {
-            enabled: true,
-            actionMessage: "¿Quieres recibir el poema del día a las 9am?",
-            acceptButtonText: "Sí, activar",
-            cancelButtonText: "No",
-          }
-        }
-      });
 
-      // Mostrar el prompt al cargar (si el navegador lo permite)
-      OneSignal.Slidedown.promptPush();
+        // 👇 RUTA DEL WORKER EN TU SUBCARPETA
+        serviceWorkerPath: "/Elena_eres_el_amor_de_mi_vida/OneSignalSDKWorker.js",
+
+        // 👇 SCOPE EN TU SUBCARPETA
+        serviceWorkerParam: { scope: "/Elena_eres_el_amor_de_mi_vida/" }
+      });
     });
   </script>
   
