@@ -12,9 +12,18 @@
     OneSignalDeferred.push(async function(OneSignal) {
       await OneSignal.init({
         appId: "1ec579bf-552f-4e70-9900-4e6bc28b63a5",
-        serviceWorkerPath: "/Elena_eres_el_amor_de_mi_vida/OneSignalSDKWorker.js",
-        serviceWorkerParam: { scope: "/Elena_eres_el_amor_de_mi_vida/" }
+        promptOptions: {
+          slidedown: {
+            enabled: true,
+            actionMessage: "¿Quieres recibir el poema del día a las 9am?",
+            acceptButtonText: "Sí, activar",
+            cancelButtonText: "No",
+          }
+        }
       });
+
+      // Mostrar el prompt al cargar (si el navegador lo permite)
+      OneSignal.Slidedown.promptPush();
     });
   </script>
   
@@ -48,6 +57,11 @@
         e.preventDefault(); // bloquea el resto
       }
     }, { passive: false });
+  </script>
+  <script>
+    document.getElementById("btnNoti").addEventListener("click", async () => {
+      const OneSignal = await window.OneSignalDeferred?.[0]?.promise?.catch(()=>null);
+    });
   </script>
 </body>
 </html>
