@@ -4,7 +4,8 @@ import { obtenerPoemaDelDia } from './poemsManager.js';
 async function init() {
   try {
     // 1️⃣ Cargar poemas y progreso desde Firebase
-    const res = await fetch('data/poemas.json');
+    //const res = await fetch('data/poemas.json');
+    const res = await fetch('https://raw.githubusercontent.com/milo023-jpg/poemsWeb/refs/heads/main/data/poemas.json');
     const poemas = await res.json();
     const progreso = await obtenerProgreso();
 
@@ -23,9 +24,10 @@ async function init() {
     // 4️⃣ Mostrar poema del día
     mostrarPoema(poema);
 
-    // 5️⃣ Mostrar todos los poemas con los vistos marcados
+    // 5️⃣ Mostrar todos los poemas, marcando los vistos
     mostrarListaPoemas(poemas, progreso.vistos);
-    
+
+
   } catch (error) {
     console.error("❌ Error al inicializar:", error);
     document.getElementById('poema-container').textContent =
@@ -43,13 +45,13 @@ function mostrarListaPoemas(poemas, vistos) {
   const contador = document.getElementById('contador-poemas');
   lista.innerHTML = '';
 
-  // Filtrar los poemas vistos
+  // Filtra solo poemas vistos
   const poemasVistos = poemas.filter(poema => vistos.includes(poema.id));
-
+  
   // Mostrar contador de progreso
-  contador.textContent = `Has visto ${poemasVistos.length} poemas de ${poemas.length}`;
+  contador.textContent = `Has visto ${vistos.length} de ${poemas.length} poemas`;
 
-  // Si no hay poemas vistos aún
+  // Si no hay poemas vistos
   if (poemasVistos.length === 0) {
     const li = document.createElement('li');
     li.textContent = 'Aún no has leído ningún poema 💗';
@@ -59,28 +61,19 @@ function mostrarListaPoemas(poemas, vistos) {
     return;
   }
 
-  /* // Mostrar solo los vistos
+  // Mostrar todos los poemas, marcando los vistos
   poemasVistos.forEach(poema => {
     const li = document.createElement('li');
-    li.textContent = poema.texto;
+    li.textContent = `${poema.id}. ${poema.texto}`;
     li.classList.add('visto');
-    li.title = 'Ya visto';
     lista.appendChild(li);
-  }); */
-  
-  // Mostrar los poemas vistos 5 veces
-  for (let i = 0; i < 5; i++) {
-    poemasVistos.forEach(poema => {
-      const li = document.createElement('li');
-      li.textContent = poema.texto;
-      li.classList.add('visto');
-      li.title = `Ya visto (repetición ${i + 1})`;
-      lista.appendChild(li);
-    });
-  }
 
+
+    // Al hacer clic en un poema, se muestra su contenido
+    li.addEventListener('click', () => mostrarPoema(poema));
+    lista.appendChild(li);
+  });
 }
-
 
 
 init();
